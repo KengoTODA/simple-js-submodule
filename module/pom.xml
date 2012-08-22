@@ -15,6 +15,30 @@
     <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
     <sonar.javascript.jstestdriver.reportsfolder>jstestdriver</sonar.javascript.jstestdriver.reportsfolder>
   </properties>
+  <profiles>
+    <profile>
+      <id>Windows</id>
+      <activation>
+        <os>
+          <family>windows</family>
+        </os>
+      </activation>
+      <properties>
+        <browser>C:\Program Files (x86)\Mozilla Firefox\firefox.exe</browser>
+      </properties>
+    </profile>
+    <profile>
+      <id>Unix</id>
+      <activation>
+        <os>
+          <family>unix</family>
+        </os>
+      </activation>
+      <properties>
+        <browser>/usr/bin/firefox</browser>
+      </properties>
+    </profile>
+  </profiles>
   <dependencies>
     <dependency>
       <groupId>com.googlecode.jstd-maven-plugin</groupId>
@@ -36,7 +60,7 @@
           <reset>true</reset>
           <port>4224</port>
           <testOutput>target/jstestdriver</testOutput>
-          <browser>C:\Program Files (x86)\Mozilla Firefox\firefox.exe</browser>
+          <browser>${browser}</browser>
           <skipTests>${maven.test.skip}</skipTests>
         </configuration>
         <executions>
