@@ -13,7 +13,7 @@
   <properties>
     <sonar.language>js</sonar.language>
     <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
-    <sonar.javascript.jstestdriver.reportsfolder>jstestdriver</sonar.javascript.jstestdriver.reportsfolder>
+    <sonar.javascript.jstestdriver.reportsfolder>target/jstestdriver</sonar.javascript.jstestdriver.reportsfolder>
   </properties>
   <profiles>
     <profile>
